@@ -1,18 +1,31 @@
-/**
- * Continuous Update Tools
- * Created by Sam on 9/8/15.
- */
-var exec    = require('cordova/exec'),
-    cordova = require('cordova');
 
-module.exports = {
+exports.checkUpdate = function (args, onfulfill, onreject) {
+    var ThenFail = window.ThenFail;
+    var promise;
 
-    checkUpdate:function(successCallback, errorCallback,args){
-        if(args == null || args == undefined){
-            args = {};
-        }
-        args.updateServer = "http://daz.so/app/android/version.txt";
-        exec(successCallback, errorCallback, "CuManager", "checkUpdate", [args]);
+    if (ThenFail && !onfulfill && !onreject) {
+        promise = new ThenFail();
+    }
+    if(!args) {
+        args = {};
     }
 
+    cordova
+        .exec(function () {
+            if (promise) {
+                promise.resolve();
+            } else if (onfulfill) {
+                onfulfill();
+            }
+        }, function (err) {
+            if (promise) {
+                promise.reject(err);
+            } else if (onreject) {
+                onreject(err);
+            }
+        }, 'CuManager', 'checkUpdate', [
+            args
+        ]);
+
+    return promise;
 };
