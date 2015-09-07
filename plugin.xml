@@ -30,6 +30,7 @@
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         </config-file>
 
-        <source-file src="src/main/java/com/jianzhi_inc/dandelion/android/CuManager.java" target-dir="src/org/zy/yuancheng/qq" />
+        <source-file src="src/main/java/com/jianzhi_inc/dandelion/android/CuManager.java"
+                     target-dir="src/com/jianzhi_inc/dandelion" />
     </platform>
 </plugin>
