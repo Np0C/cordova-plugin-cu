@@ -23,7 +23,7 @@ exports.checkUpdate = function (args, onfulfill, onreject) {
             } else if (onreject) {
                 onreject(err);
             }
-        }, 'CuManager', 'checkUpdate', [
+        }, 'JzCU', 'checkUpdate', [
             args
         ]);
 
