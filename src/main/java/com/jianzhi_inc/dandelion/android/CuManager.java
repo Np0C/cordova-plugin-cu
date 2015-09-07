@@ -19,7 +19,7 @@ public class CuManager extends CordovaPlugin {
     public boolean execute(String action, JSONArray rawArgs, CallbackContext callbackContext) throws JSONException {
 
         Log.e(TAG, "action called " + action);
-        return false;
+        return true;
         //return super.execute(action, rawArgs, callbackContext);
     }
 }
