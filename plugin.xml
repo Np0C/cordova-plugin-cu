@@ -20,9 +20,10 @@
     </js-module>
 
     <platform name="android">
-        <!--<hook type="before_plugin_install" src="scripts/android/android-hook.js" />-->
         <config-file target="res/xml/config.xml" parent="/*">
-
+            <feature name="JzCU" >
+                <param name="android-package" value="com.jianzhi_inc.dandelion.android.CuManager"/>
+            </feature>
         </config-file>
         <!--permission -->
         <config-file target="AndroidManifest.xml" parent="/manifest">
