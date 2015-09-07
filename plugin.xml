@@ -11,7 +11,7 @@
 
     <!--require cordova version -->
     <engines>
-        <engine name="cordova" version=">=4.1.1" />
+        <engine name="cordova" version=">=3.8.0" />
         <!--<engine name="cordova-android" version=">=4.0.0-dev" />-->
     </engines>
 
