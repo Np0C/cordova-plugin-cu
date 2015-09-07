@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.jianzhi_inc.dandelion.cu"
+        version="0.0.1">
+
+    <name>JzCU</name>
+    <description>Continuous Update Tools for Jianzhi Inc. Apps</description>
+    <licence>MIT</licence>
+    <repo>https://github.com/Np0C/cordova-plugin-cu</repo>
+
+    <!--require cordova version -->
+    <engines>
+        <engine name="cordova" version=">=4.1.1" />
+        <!--<engine name="cordova-android" version=">=4.0.0-dev" />-->
+    </engines>
+
+    <js-module src="www/jzcu.js" name="jzcu">
+        <clobbers target="JzCU" />
+    </js-module>
+
+    <platform name="android">
+        <!--<hook type="before_plugin_install" src="scripts/android/android-hook.js" />-->
+        <config-file target="res/xml/config.xml" parent="/*">
+
+        </config-file>
+        <!--permission -->
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        </config-file>
+
+        <source-file src="src/main/java/com/jianzhi_inc/dandelion/android/CuManager.java" target-dir="src/org/zy/yuancheng/qq" />
+        <!--QQ SDK version 2.9.1-->
+        <source-file src="src/android/open_sdk_r5043.jar" target-dir="libs/" />
+        <source-file src="src/android/mta-sdk-1.6.2.jar" target-dir="libs/" />
+        <source-file src="src/android/android-support-v4.jar" target-dir="libs/" />
+    </platform>
+</plugin>
