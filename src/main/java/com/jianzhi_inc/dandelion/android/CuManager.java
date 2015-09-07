@@ -3,6 +3,7 @@ package com.jianzhi_inc.dandelion.android;
 import android.util.Log;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
+import org.json.JSONArray;
 import org.json.JSONException;
 
 /**
@@ -15,12 +16,10 @@ public class CuManager extends CordovaPlugin {
 
 
     @Override
-    public boolean execute(String action, String rawArgs, CallbackContext callbackContext) throws JSONException {
+    public boolean execute(String action, JSONArray rawArgs, CallbackContext callbackContext) throws JSONException {
 
         Log.e(TAG, "action called " + action);
-        if("checkUpdate".equals(action)) {
-            return true;
-        } else return false;
+        return false;
         //return super.execute(action, rawArgs, callbackContext);
     }
 }
