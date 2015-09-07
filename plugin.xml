@@ -15,7 +15,7 @@
         <!--<engine name="cordova-android" version=">=4.0.0-dev" />-->
     </engines>
 
-    <js-module src="www/jzcu.js" name="jzcu">
+    <js-module src="www/jzcu.js" name="JzCU">
         <clobbers target="JzCU" />
     </js-module>
 
